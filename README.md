@@ -1,4 +1,7 @@
 # OpenDBDiff
+### Some improvements added to the project during internship
+***Objects are added to the exception list in options tab such as triggers,stored procedures,views etc.  from a table named AID_UPDATE_EXCEPTIONS in MS SQL SERVER.***
+
 A database comparison tool for Microsoft SQL Server 2005+ that reports schema differences and creates a synchronization script.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/rdng91bfx3ao8ts6?svg=true)](https://ci.appveyor.com/project/OpenDBDiff/OpenDBDiff/branch/develop/artifacts)
