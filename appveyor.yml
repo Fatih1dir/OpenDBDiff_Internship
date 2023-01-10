@@ -1,0 +1,27 @@
+version: 0.13.0.{build}
+image: Visual Studio 2019
+
+# enable patching of AssemblyInfo.* files
+assembly_info:
+  patch: true
+  file: OpenDBDiff\Properties\AssemblyVersionInfo.cs
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+
+before_build:
+- cmd: nuget restore OpenDBDiff.sln
+
+configuration: 
+- Release
+
+build:
+  parallel: true # enable MSBuild parallel builds
+  project: OpenDBDiff.sln
+  verbosity: minimal
+
+artifacts:
+- path: OpenDBDiff\bin\Release
+  name: OpenDBDiff.CI
+- path: OpenDBDiff.CLI\bin\Release
+  name: OpenDBDiff.CLI.CI
